@@ -9,7 +9,7 @@ import multer from 'multer'
 import handleValidationErrors from "./utils/handleValidationErrors.js";
 
 mongoose
-    .connect(process.env.MONGODB_URL).then(() => {
+    .connect(process.env.MONGODB_URI).then(() => {
     console.log("DB IS WORKING")
 })
     .catch(e => console.log('DB ERROR:', e))
