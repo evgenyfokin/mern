@@ -51,5 +51,5 @@ app.listen(PORT, (e) => {
     if (e) {
         return console.log(e)
     }
-    console.log(`SERVER IS GOING ON PORT ${PORT}`)
+    console.log(`SERVER IS RUNNING ON PORT ${PORT}`)
 })
