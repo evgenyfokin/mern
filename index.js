@@ -9,8 +9,7 @@ import multer from 'multer'
 import handleValidationErrors from "./utils/handleValidationErrors.js";
 
 mongoose
-    .connect('mongodb+srv://admin:Netflix2024@collections.upgfylc.mongodb.' +
-        'net/collections?retryWrites=true&w=majority').then(() => {
+    .connect(process.env.MONGODB_URL).then(() => {
     console.log("DB IS WORKING")
 })
     .catch(e => console.log('DB ERROR:', e))
@@ -25,7 +24,7 @@ const storage = multer.diskStorage({
     }
 })
 const upload = multer({storage})
-const PORT = 3004
+const PORT = process.env.PORT || 3004
 
 app.use(express.json())
 app.use(cors( ))
